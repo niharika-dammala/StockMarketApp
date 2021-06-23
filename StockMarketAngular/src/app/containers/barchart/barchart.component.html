@@ -1,0 +1,37 @@
+<h1>BarChart</h1>
+
+<div class="container">
+    <a class="nav-link" [routerLink]="['/userviewcompany']"><button class="btn btn-primary">View Company</button></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="nav-link" [routerLink]="['/barchart']"><button class="btn btn-primary">Bar Chart</button></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="nav-link" [routerLink]="['/userviewcompany']"><button class="btn btn-primary">Export Data</button></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="nav-link" [routerLink]="['/userlogin']"><button class="btn btn-primary">Log Out</button></a>
+  </div>
+<div>
+    <div class="container">
+        <table  class="table table-bordered table-hover">
+            <tr>
+                <td>Company Code</td>
+                <td>
+                    <input type="number" class="form-control" placeholder="Graph By Company" [(ngModel)]="companyCode" required="required" pattern="" title="">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <!-- <button class="btn-primary" (click)="GetGraph()">Graph</button> -->
+                </td>
+              </tr>
+        </table>
+    </div>
+    <div style="display: block" *ngIf="showGraph">
+        <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            >
+        </canvas>
+    </div>
+</div>

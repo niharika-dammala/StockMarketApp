@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Import Data</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/managecompany']">Manage Company<span class="sr-only"></span></a>
+        </li>
+  
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/stockexchange']">Manage StockExchange<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/importdata']">Import Data<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/adminlogin']">Log Out<span class="sr-only"></span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="text-center">
+    <input class="form-control" type="file" 
+            (change)="onChange($event)">
+  
+    <button (click)="ImportExcel()" 
+        class="btn btn-success">
+        Upload
+    </button>
+</div>
+
+  
+<!-- Shareable short link of  uoloaded file -->
+<!-- <div class="container text-center jumbotron"
+    *ngIf="shortLink">
+    <h2> Visit Here</h2>
+    <a href="{{shortLink}}">{{shortLink}}</a>
+</div>
+  
+Flag variable is used here-->
+<!-- <div class="container" *ngIf="loading">
+    <h3>Loading ...</h3>
+</div> --> 
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>StockPrice Id</th>
+            <th>Company Code</th>
+            <th>StockExchange Id</th>
+            <th>Current Price</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of stockList">
+            <td>{{item.stockPriceId}}</td>
+            <td>{{item.companyCode}}</td>
+            <td>{{item.stockExchangeId}}</td>
+            <td>{{item.currentPrice}}</td>
+            <td>{{item.date}}</td>
+             <td>{{item.time}}</td> 
+            <!-- <td *ngFor="let i of SectorList">
+              <select id="Sectors" name="Sectors">
+                <option value="{{i.sectorName}}">{{i.sectorName}}</option>
+              </select>
+            </td> -->
+            <!-- <td>
+              <button class="btn-primary" (click)="onDelete(item.companyCode)">Delete</button>
+               <i
+                class="far fa-trash-alt fa-lg text-danger"
+                (click)="onDelete(item.companyCode)"
+              >Delete</i> -->
+           <!-- </td> -->
+        </tr>
+    </tbody>
+</table>

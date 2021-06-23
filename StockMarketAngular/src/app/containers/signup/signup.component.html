@@ -1,0 +1,95 @@
+<!-- <h1>SignUp Component</h1>
+
+<div class="container">
+    <table  class="table table-bordered table-hover">
+        <tr>
+            <td>User ID</td>
+            <td>
+                <input type="number" class="form-control" [(ngModel)]="userId" required="required" pattern="" title="">
+            </td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" class="form-control" [(ngModel)]="username" required="required" pattern="" title="">
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" class="form-control" [(ngModel)]="password" required="required" pattern="" title="">
+            </td>
+        </tr>
+        <tr>
+            <td>User Type</td>
+            <td>
+                <input type="text" class="form-control" [(ngModel)]="userType" required="required" pattern="" title="">
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="email" class="form-control" [(ngModel)]="email" pattern="" title="">
+            </td>
+        </tr>
+        <tr>
+            <td>Mobile</td>
+            <td>
+                <input type="text" class="form-control" [(ngModel)]="mobile" pattern="" title="">
+            </td>
+        </tr>
+        <tr>
+            <td>Confirmed</td>
+            <td>
+                <input type="text" class="form-control" [(ngModel)]="confirmed" pattern="" title="">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn-primary" type="submit" (click)="Signup()">Sign Up</button>
+            </td>
+            <td>
+                <a class="nav-link" [routerLink]="['/userlogin']"><button class="btn btn-primary">Back</button></a>
+            </td>
+        </tr>
+    </table>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form  class="box">
+                    <h1>Sign Up</h1>
+                    <p class="text-muted"> Please enter your Details!</p> 
+                <div class="form-group">
+                    <input type="number" class="form-control" [(ngModel)]="userId" placeholder="userId" required="required" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="username" placeholder="Username" required="required" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password" required="required" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="userType"  placeholder="User Type" required="required" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" [(ngModel)]="email" placeholder="Email" required="required" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="mobile" placeholder="Mobile" required="required" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="confirmed" placeholder="Confirm(y/n)" required="required" [ngModelOptions]="{standalone: true}">
+                </div>
+                
+                 
+                     <button class="btn btn-primary btn-block" type="submit" (click)="Signup()">Signup</button>
+
+                     
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

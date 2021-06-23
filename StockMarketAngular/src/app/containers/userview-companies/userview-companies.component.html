@@ -1,0 +1,62 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">User Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/userviewcompany']">View Company<span class="sr-only"></span></a>
+        </li>
+  
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/barchart']">Bar Chart<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link"  [routerLink]="['/UserappComponent']">Export Data<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/userlogin']">Log Out<span class="sr-only"></span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <div class="container">
+        <table  class="table table-bordered table-hover">
+            <tr>
+                <td>Company Word Search</td>
+                <td>
+                    <input type="text" class="form-control" placeholder="Search Company by Word" [(ngModel)]="companyWord" required="required" pattern="" title="">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="btn-primary" (click)="GetCompanies()">Search</button>
+                </td>
+              </tr>
+        </table>
+    </div>
+    <div style="display: block">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Company Code</th>
+                    <th>Company Name</th>
+                    <th>Turnover</th>
+                    <th>CEO</th>
+                    <th>Sector</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of companyList">
+                    <td>{{item.companyCode}}</td>
+                    <td>{{item.companyName}}</td>
+                    <td>{{item.turnover}}</td>
+                    <td>{{item.ceo}}</td>
+                    <td>{{item.sectorId}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

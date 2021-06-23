@@ -1,0 +1,48 @@
+<!-- <h1>Admin App</h1> -->
+
+<!-- <div class="container">
+  <a class="nav-link" [routerLink]="['/managecompany']"><button class="btn btn-primary">Manage Company</button></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="nav-link" [routerLink]="['/stockexchange']"><button class="btn btn-primary">Manage StockExchange</button></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="nav-link" [routerLink]="['/importdata']"><button class="btn btn-primary">Import Data</button></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="nav-link" [routerLink]="['/adminlogin']"><button class="btn btn-primary">Log Out</button></a>
+</div> -->
+<!-- <div>
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <div class="container">
+          <a class="navbar-brand" [routerLink]="['']">StockMarket</a>
+          <ul class="nav navbar-nav" routerLinkActive="active">
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/managecompany']">Manage Company</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/stockexchange']">Manage StockExchange</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/managecompany']">Import Data</a></li>
+          </ul>
+      </div>
+    </nav>
+  </div> -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Admin Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/managecompany']">Manage Company<span class="sr-only"></span></a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/stockexchange']">Manage StockExchange<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/importdata']">Import Data<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/adminlogin']">Log Out<span class="sr-only"></span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>

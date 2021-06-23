@@ -1,0 +1,160 @@
+
+
+<!-- <div class="container">
+  <a class="nav-link" [routerLink]="['/managecompany']"><button class="btn btn-primary">Manage Company</button></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="nav-link" [routerLink]="['/stockexchange']"><button class="btn btn-primary">Manage StockExchange</button></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="nav-link" [routerLink]="['/managecompany']"><button class="btn btn-primary">Import Data</button></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="nav-link" [routerLink]="['/adminlogin']"><button class="btn btn-primary">Log Out</button></a>
+</div> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Manage Companies</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/managecompany']">Manage Company<span class="sr-only"></span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/stockexchange']">Manage StockExchange<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/importdata']">Import Data<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/adminlogin']">Log Out<span class="sr-only"></span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+    <table  class="table table-bordered table-hover">
+      <tr>
+        <td>Company Code</td>
+        <td>
+        <input type="number" class="form-control" [(ngModel)]="companyCode" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td>Company Name</td>
+        <td>
+        <input type="text" class="form-control" [(ngModel)]="companyName" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td>Turnover</td>
+        <td>
+        <input type="number" class="form-control" [(ngModel)]="turnover" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td>CEO</td>
+        <td>
+        <input type="text" class="form-control" [(ngModel)]="ceo" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td>Board Of Directors</td>
+        <td>
+        <input type="text" class="form-control" [(ngModel)]="boardDirector" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td>Sector</td>
+        <!-- <td>
+        <input type="number" class="form-control" [(ngModel)]="sectorId" required="required" pattern="" title=""> -->
+        <td >
+          <input type="number" class="form-control" [(ngModel)]="sectorId" required="required" pattern="" title="">
+          <!-- <select id="Sectors" name="Sectors" >
+            <option *ngFor="let i of SectorList"  value="{{i.sectorId}}">{{i.sectorName}}</option>
+          </select> -->
+        </td>
+        <!-- </td> -->
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button class="btn-primary" (click)="GetCompanyDetails()">Search</button>
+          <button class="btn-primary" (click)="AddCompany()">Add</button>
+          <button class="btn-primary" (click)="EditCompany()">Update</button>
+         
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="text-info">
+          {{errormsg}}
+        </td>
+      </tr>
+    </table>
+    
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Company Code</th>
+                <th>Company Name</th>
+                <th>Turnover</th>
+                <th>CEO</th>
+                <th>boardDirector</th>
+                <th>Sector</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of companyList">
+                <td>{{item.companyCode}}</td>
+                <td>{{item.companyName}}</td>
+                <td>{{item.turnover}}</td>
+                <td>{{item.ceo}}</td>
+                <td>{{item.boardDirector}}</td>
+                 <td>{{item.sectorId}}</td> 
+                <!-- <td *ngFor="let i of SectorList">
+                  <select id="Sectors" name="Sectors">
+                    <option value="{{i.sectorName}}">{{i.sectorName}}</option>
+                  </select>
+                </td> -->
+                <td>
+                  <button class="btn-primary" (click)="onDelete(item.companyCode)">Delete</button>
+                  <!-- <i
+                    class="far fa-trash-alt fa-lg text-danger"
+                    (click)="onDelete(item.companyCode)"
+                  >Delete</i> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- <div class="registration-form">
+  <form>
+     
+      <div class="form-group">
+        <input type="number" class="form-control" [(ngModel)]="companyCode" required="required" pattern="" title="" placeholder="Company Code">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="companyName" required="required" pattern="" title=""placeholder="Company Name"> 
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" [(ngModel)]="turnover" required="required" pattern="" title="" placeholder="Turnover">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="ceo" required="required" pattern="" title="" placeholder="CEO">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="boardDirector" required="required" pattern="" title="" placeholder="Board Director">
+      </div>
+      <div class="form-group">
+      <select id="Sectors" name="Sectors" >
+        <option *ngFor="let i of SectorList"  value="{{i.sectorId}}">{{i.sectorName}}</option>
+      </select>
+    </div>
+      <div class="form-group">
+          <button type="button" class="btn btn-block create-account">Create Account</button>
+      </div>
+  </form>
+  
+</div> -->

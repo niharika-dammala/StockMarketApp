@@ -1,0 +1,35 @@
+<!-- <h1>User App</h1>
+
+<div class="container">
+  <a class="nav-link" [routerLink]="['/userviewcompany']"><button class="btn btn-primary">View Company</button></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="nav-link" [routerLink]="['/barchart']"><button class="btn btn-primary">Bar Chart</button></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="nav-link" ><button class="btn btn-primary" (click)="ExportStock()">Export Data</button></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="nav-link" [routerLink]="['/userlogin']"><button class="btn btn-primary">Log Out</button></a>
+</div> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">User Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/userviewcompany']">View Company<span class="sr-only"></span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/barchart']">Bar Chart<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" (click)="serve.ExportStock()" [routerLink]="['/UserappComponent']">Export Data<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/userlogin']">Log Out<span class="sr-only"></span></a>
+      </li>
+    </ul>
+  </div>
+</nav>

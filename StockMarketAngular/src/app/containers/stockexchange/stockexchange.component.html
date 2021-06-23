@@ -1,0 +1,92 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Manage StockExchange</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/managecompany']">Manage Company<span class="sr-only"></span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/stockexchange']">Manage StockExchange<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/importdata']">Import Data<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/adminlogin']">Log Out<span class="sr-only"></span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+    <table  class="table table-bordered table-hover">
+      <tr>
+        <td>Stock Exchange ID</td>
+        <td>
+        <input type="number" class="form-control" [(ngModel)]="stockExchangeId" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td>Stock Exchange Name</td>
+        <td>
+        <input type="text" class="form-control" [(ngModel)]="stockExchangeName" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td>Brief</td>
+        <td>
+        <input type="text" class="form-control" [(ngModel)]="brief" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>
+        <input type="text" class="form-control" [(ngModel)]="address" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td>Remarks</td>
+        <td>
+        <input type="text" class="form-control" [(ngModel)]="remarks" required="required" pattern="" title="">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button class="btn-primary" (click)="GetStockexchangeDetails()">Search</button>
+          <button class="btn-primary" (click)="AddStockexchange()">Add</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="text-info">
+          {{errormsg}}
+        </td>
+      </tr>
+    </table>
+    
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Stock Exchange ID</th>
+                <th>Stock Exchange Name</th>
+                <th>Brief</th>
+                <th>Address</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of stockexchangeList">
+                <td>{{item.stockExchangeId}}</td>
+                <td>{{item.stockExchangeName}}</td>
+                <td>{{item.brief}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.remarks}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
